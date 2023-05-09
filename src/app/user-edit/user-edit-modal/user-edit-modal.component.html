@@ -1,0 +1,35 @@
+<mat-form-field class="form">
+  <mat-label>Name</mat-label>
+  <input
+    type="username"
+    matInput
+    [formControl]="nameFormControl"
+    placeholder="username"
+  />
+</mat-form-field>
+
+<mat-form-field class="form">
+  <mat-label>Email</mat-label>
+  <input
+    type="email"
+    matInput
+    [formControl]="emailFormControl"
+    placeholder="email"
+  />
+</mat-form-field>
+
+<mat-label>Role</mat-label>
+<select [(ngModel)]="selectedRoleId" class="form-control">
+  <option *ngFor="let role of roles" [value]="role.id">
+    {{ role.name }}
+  </option>
+</select>
+
+<div class="buttons">
+  <button class="close" (click)="closeDialog()">
+    <i class="fa fa-times" aria-hidden="true"></i>
+  </button>
+  <button class="save" (click)="saveUser()">
+    <i class="fa fa-floppy-o" aria-hidden="true"></i>
+  </button>
+</div>

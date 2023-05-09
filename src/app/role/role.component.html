@@ -1,0 +1,41 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+
+<button class="button" (click)="createRole()">
+  <i class="fa fa-plus" aria-hidden="true"></i>Create role
+</button>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let role of roles" (click)="editingRoleId = role.id">
+      <td>{{ role.id }}</td>
+      <td>
+        <span>{{ role.name }}</span>
+      </td>
+      <td>
+        <div *ngIf="role.id == editingRoleId">
+          <button class="saverole" (click)="saveRole(role)">
+            <i class="fa fa-floppy-o" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div *ngIf="role.id != editingRoleId">
+          <button class="edit" (click)="editRole(role.id)">
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+          </button>
+          <button class="deletebtn" (click)="deleteRole(role.id)">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          </button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

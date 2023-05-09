@@ -1,0 +1,41 @@
+:host{
+  display:flex;
+  flex-direction: column;
+  width: 400px;
+  height: 150px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.buttons{
+  padding-top: 20px;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+.close{
+width: 100px;
+height: 30px;
+margin-right: 20px;
+font-size: 15px;
+font-weight: bold;
+line-height: 1.5;
+color: #fff;
+background-color:blue;
+border: 1px solid blue;
+border-radius: 10px;
+transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.save{
+  width: 100px;
+  height: 30px;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: #fff;
+  background-color:blue;
+  border: 1px solid blue;
+  border-radius: 10px;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  }

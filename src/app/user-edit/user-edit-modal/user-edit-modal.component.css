@@ -1,0 +1,158 @@
+
+*{
+  font-family: 'Poppins';
+}
+table {
+  border-collapse: collapse;
+  width: 500px;
+  background-color: white;
+  margin-top: 200px;
+  margin-left: 700px;
+  border-radius: 10px;
+
+}
+
+.material-icons.add {
+  font-size: 35px;
+  background-color: white;
+  border-radius: 10px;
+  margin-left: 40px;
+}
+
+
+
+th, td {
+  text-align: center;
+  padding: 8px;
+}
+
+.material-icons .add{
+  color: blue;
+}
+
+
+.delete {
+  display: inline-block;
+  margin-right: 5px;
+  color: #ff0000;
+}
+
+.delete:hover{
+  color: #bb0303
+}
+.settings{
+  display: inline-block;
+  margin-right: 5px;
+  color: #000dff;
+}
+
+.settings:hover {
+  color: #010ac6;
+}
+
+.material-icons {
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+
+.button {
+  margin-left: 80px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 200px;
+  height: 30px;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: #fff;
+  background-color:blue;
+  border: 1px solid blue;
+  border-radius: 10px;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: hsl(246, 90%, 45%);
+  border-color: hsl(246, 90%, 45%);
+  }
+
+  .saverole {
+    width: 50px;
+    height: 30px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #fff;
+    background-color:blue;
+    border: 1px solid blue;
+    border-radius: 10px;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  }
+
+.edit{
+  width: 50px;
+  height: 30px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #fff;
+  background-color:blue;
+  border: 1px solid blue;
+  border-radius: 10px;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.deletebtn{
+  margin-left: 5px;
+  margin-left: 5px;
+  width: 60px;
+  height: 30px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #fff;
+  background-color:blue;
+  border: 1px solid blue;
+  border-radius: 10px;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+:host{
+  display:flex;
+  flex-direction: column;
+  width: 600px;
+  height: 400px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.buttons{
+  padding-top: 5px;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+.close{
+width: 100px;
+height: 30px;
+margin-right: 20px;
+font-size: 15px;
+font-weight: bold;
+line-height: 1.5;
+color: #fff;
+background-color:blue;
+border: 1px solid blue;
+border-radius: 10px;
+transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.save{
+  width: 100px;
+  height: 30px;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: #fff;
+  background-color:blue;
+  border: 1px solid blue;
+  border-radius: 10px;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  }

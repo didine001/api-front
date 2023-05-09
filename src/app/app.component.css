@@ -1,0 +1,52 @@
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.nav-link {
+  padding-right: 40px;
+  color: #4c4c4c;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #808080;
+}
+.navbar-nav {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+  padding-inline-start: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+
+}
+
+.navbar-nav li  {
+  float: right;
+  margin-left: 10px;
+}
+
+.navbar-nav .nav-link.active {
+  text-decoration: underline 2px solid rgba(0, 0, 255, 0.553);
+  transition: transform 0.5s ease-in-out;
+  font-weight: bold;
+  color: blue;
+}
+
+body {
+  background-image: url("../app/photo.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  margin: 0 !important;
+  padding: 0;
+}
+

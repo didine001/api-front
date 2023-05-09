@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<button class="button" (click)="createUser()">
+  <i class="fa fa-plus" aria-hidden="true"></i>Create User
+</button>
+<body>
+  <div class="table">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nom</th>
+          <th>Email</th>
+          <th>Role</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{user.id}}</td>
+          <td>
+            <span>{{ user.username }}</span>
+          </td>
+          <td>
+            <span>{{ user.email }}</span>
+          </td>
+          <td>
+            <span>{{ user.roleId }}</span>
+          </td>
+          <td>
+            <div *ngIf="user.id == editingRoleId">
+              <button class="saverole" (click)="saveUser(user)">
+                <i class="fa fa-floppy-o" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div *ngIf="user.id != editingRoleId">
+              <button class="edit" (click)="editUser(user.id)">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+              </button>
+              <button class="deletebtn" (click)="deleteUser(user.id)">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
