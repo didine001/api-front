@@ -71,7 +71,6 @@ export class UserEditComponent implements OnInit {
       }
     });
   }
-
   deleteUser(id: number) {
     this.userServices.deleteUser(id).subscribe(
       () => {
