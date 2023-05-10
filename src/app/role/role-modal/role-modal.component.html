@@ -1,21 +1,12 @@
-<mat-form-field class="form">
-  <mat-label>Name</mat-label>
-  <input
-    type="email"
-    matInput
-    [formControl]="nameFormControl"
-    placeholder="Name"
-  />
-  <mat-error *ngIf="nameFormControl.hasError('required')">
-    Role name is <strong>required</strong>
-  </mat-error>
-</mat-form-field>
-
-<div class="buttons">
-  <button class="close" (click)="closeDialog()">
-    <i class="fa fa-times" aria-hidden="true"></i>
-  </button>
-  <button class="save" (click)="saveRole()">
-    <i class="fa fa-floppy-o" aria-hidden="true"></i>
-  </button>
-</div>
+<form [formGroup]="roleForm" (ngSubmit)="saveRole()" class="form">
+  <h1>Change role name</h1>
+  <input type="email" matInput formControlName="name" placeholder="Name" />
+  <div class="buttons">
+    <button class="close" type="button" (click)="closeDialog()">
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </button>
+    <button class="save" type="submit" [disabled]="!roleForm.valid">
+      <i class="fa fa-floppy-o" aria-hidden="true"></i>
+    </button>
+  </div>
+</form>

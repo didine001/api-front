@@ -1,7 +1,7 @@
 import { Role } from '../../models/roles';
 import { RolesService } from '../../_services/role.service';
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormControl, UntypedFormControl, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -10,7 +10,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./role-modal.component.css'],
 })
 export class RoleModalComponent implements OnInit {
-  nameFormControl: UntypedFormControl;
+  roleForm: FormGroup;
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public data: {
@@ -20,7 +20,9 @@ export class RoleModalComponent implements OnInit {
     private dialogRef: MatDialogRef<RoleModalComponent>,
     private roleService: RolesService
   ) {
-    this.nameFormControl = new FormControl();
+    this.roleForm = new FormGroup({
+      name: new FormControl('', Validators.required),
+    });
   }
 
   ngOnInit(): void {}
@@ -30,11 +32,11 @@ export class RoleModalComponent implements OnInit {
   }
 
   saveRole() {
-    this.nameFormControl.markAsTouched();
-    if (this.nameFormControl.valid) {
+    this.roleForm.markAllAsTouched();
+    if (this.roleForm.valid) {
       const role: Role = {
         id: this.data.id,
-        name: this.nameFormControl.value as string,
+        name: this.roleForm.get('name')?.value as string,
       };
       if (this.data.id) {
         role.id = this.data.id;
@@ -49,6 +51,5 @@ export class RoleModalComponent implements OnInit {
         });
       }
     }
-    this.nameFormControl = new FormControl('', [Validators.required]);
   }
 }

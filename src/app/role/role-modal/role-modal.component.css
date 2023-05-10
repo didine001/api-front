@@ -1,41 +1,99 @@
-:host{
-  display:flex;
-  flex-direction: column;
-  width: 400px;
-  height: 150px;
-  border-radius: 10px;
-  margin-bottom: 30px;
-}
-
-.buttons{
-  padding-top: 20px;
+form {
+  font-family: "Poppins";
+  font-size: 22px;
+  max-width: 400px;
   margin: 0 auto;
+  padding: 40px 50px;
+  border: 1px solid white;
+  background-color: white;
+  border-radius: 20px;
+}
+
+form h1 {
+  font-size: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group .input-icons {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+}
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input-icons .icon {
+  position: absolute;
+  padding: 10px;
+  padding-top: 1px;
+  min-width: 40px;
+  text-align: center;
+}
+.input-icons input {
+  padding-left: 45px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  display: block;
+  width: 100%;
+  font-size: 24px;
+  line-height: 1.5;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  color: #555;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.alreadyaccount {
+  font-size: 17px;
+  font-family: "Poppins";
+  padding-top: 20px;
+  padding-left: 5px;
+}
+.alreadyaccount a {
+  color: blue;
+  text-decoration: none;
+  font-weight: bold;
+}
+.form-group-btn {
   display: inline-block;
-}
-
-.close{
-width: 100px;
-height: 30px;
-margin-right: 20px;
-font-size: 15px;
-font-weight: bold;
-line-height: 1.5;
-color: #fff;
-background-color:blue;
-border: 1px solid blue;
-border-radius: 10px;
-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-}
-
-.save{
+  padding: 10px;
+  margin-left:50px;
+  font-size: 20px;
   width: 100px;
-  height: 30px;
-  font-size: 15px;
   font-weight: bold;
   line-height: 1.5;
   color: #fff;
-  background-color:blue;
+  background-color: blue;
   border: 1px solid blue;
   border-radius: 10px;
   transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-  }
+  box-sizing: border-box;
+}
+
+.form-group-btn:hover {
+  background-color: hsl(246, 90%, 45%);
+  border-color: hsl(246, 90%, 45%);
+}
+
+.alert-danger {
+  font-size: 16px;
+  font-family: "Poppins";
+  color: #9c1825;
+}
+
+.alert-success {
+  font-size: 12px;
+  font-family: "Poppins";
+  color: #00ff3c;
+}
