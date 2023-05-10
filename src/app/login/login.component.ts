@@ -26,7 +26,7 @@ export class LoginComponent {
         '',
         [
           Validators.required,
-          Validators.minLength(6),
+          Validators.minLength(4),
           Validators.maxLength(25),
         ],
       ],
@@ -34,7 +34,7 @@ export class LoginComponent {
         '',
         [
           Validators.required,
-          Validators.minLength(6),
+          Validators.minLength(4),
           Validators.maxLength(25),
         ],
       ],
