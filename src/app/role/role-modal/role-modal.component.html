@@ -1,11 +1,11 @@
 <form [formGroup]="roleForm" (ngSubmit)="saveRole()" class="form">
-  <h1>Change role name</h1>
+  <h1>{{ data.id ? 'Edit User' : 'Create User' }}</h1>
   <input type="email" matInput formControlName="name" placeholder="Name" />
   <div class="buttons">
-    <button class="close" type="button" (click)="closeDialog()">
+    <button class="form-group-btn" type="button" (click)="closeDialog()">
       <i class="fa fa-times" aria-hidden="true"></i>
     </button>
-    <button class="save" type="submit" [disabled]="!roleForm.valid">
+    <button class="form-group-btn" type="submit" [disabled]="!roleForm.valid">
       <i class="fa fa-floppy-o" aria-hidden="true"></i>
     </button>
   </div>

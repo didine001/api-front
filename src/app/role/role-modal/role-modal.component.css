@@ -44,7 +44,7 @@ input[type="email"],
 input[type="password"] {
   display: block;
   width: 100%;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1.5;
   padding-top: 10px;
   padding-bottom: 20px;
@@ -54,21 +54,11 @@ input[type="password"] {
   border-radius: 10px;
 }
 
-.alreadyaccount {
-  font-size: 17px;
-  font-family: "Poppins";
-  padding-top: 20px;
-  padding-left: 5px;
-}
-.alreadyaccount a {
-  color: blue;
-  text-decoration: none;
-  font-weight: bold;
-}
 .form-group-btn {
   display: inline-block;
   padding: 10px;
-  margin-left:50px;
+  margin-left:20px;
+  margin-top: 10px;
   font-size: 20px;
   width: 100px;
   font-weight: bold;
