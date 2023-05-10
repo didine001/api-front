@@ -7,6 +7,7 @@ import { UpdateUserDto, User } from '../models/user';
 import { AuthService } from '../_services/auth.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { UserEditModalComponent } from './user-edit-modal/user-edit-modal.component';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-role',
@@ -25,12 +26,17 @@ export class UserEditComponent implements OnInit {
     roleId: 0,
   };
   isEditable = false;
+  userInfoSection = new FormGroup({
+    name: new FormControl(''),
+    email: new FormControl(''),
+  });
 
   constructor(private userServices: AuthService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.getAllUsers();
   }
+
 
   getAllUsers() {
     this.userServices.getAll().subscribe(
@@ -71,7 +77,7 @@ export class UserEditComponent implements OnInit {
       }
     });
   }
-  //delete function
+
   deleteUser(id: number) {
     this.userServices.deleteUser(id).subscribe(
       () => {

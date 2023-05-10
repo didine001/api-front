@@ -1,25 +1,44 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
 import { TokenStorageService } from '../_services/token-storage.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
-export class LoginComponent implements OnInit {
-  form: any = {
-    username: null,
-    password: null
-  };
+export class LoginComponent {
+  form: FormGroup;
   isLoggedIn = false;
   isLoginFailed = false;
-  errorMessage = '';
   loggedInUser: string | null = null;
   roles: string[] = [];
-
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
-
+  errorMessage = '';
+  constructor(
+    public fb: FormBuilder,
+    private authService: AuthService,
+    private tokenStorage: TokenStorageService
+  ) {
+    this.form = this.fb.group({
+      username: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(6),
+          Validators.maxLength(25),
+        ],
+      ],
+      password: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(6),
+          Validators.maxLength(25),
+        ],
+      ],
+    });
+  }
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
@@ -27,9 +46,9 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void {
-    const { username, password } = this.form;
+    const { username, password } = this.form.value;
     this.authService.login(username, password).subscribe(
-      data => {
+      (data) => {
         this.tokenStorage.saveToken(data.accessToken);
         this.tokenStorage.saveUser(data);
 
@@ -39,7 +58,7 @@ export class LoginComponent implements OnInit {
         this.roles = this.tokenStorage.getUser().roles;
         this.reloadPage();
       },
-      err => {
+      (err) => {
         this.errorMessage = err.error.message;
         this.isLoginFailed = true;
       }
