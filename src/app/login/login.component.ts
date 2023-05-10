@@ -15,6 +15,7 @@ export class LoginComponent {
   loggedInUser: string | null = null;
   roles: string[] = [];
   errorMessage = '';
+  router: any;
   constructor(
     public fb: FormBuilder,
     private authService: AuthService,
@@ -51,20 +52,16 @@ export class LoginComponent {
       (data) => {
         this.tokenStorage.saveToken(data.accessToken);
         this.tokenStorage.saveUser(data);
-
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.loggedInUser = username;
         this.roles = this.tokenStorage.getUser().roles;
-        this.reloadPage();
+        window.location.reload();
       },
       (err) => {
         this.errorMessage = err.error.message;
         this.isLoginFailed = true;
       }
     );
-  }
-  reloadPage(): void {
-    window.location.reload();
   }
 }

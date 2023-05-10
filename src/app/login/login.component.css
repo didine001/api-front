@@ -1,26 +1,32 @@
-
-.col-md-12 .card-container {
-  font-family: 'Poppins';
+form {
+  font-family: "Poppins";
   font-size: 22px;
   max-width: 400px;
   margin: 0 auto;
-  margin-top: 150px;
+  margin-top: 90px;
   padding: 40px 50px;
   border: 1px solid white;
   background-color: white;
   border-radius: 20px;
-  }
+}
 
-.form-group .input-icons{
+form h1 {
+  font-size: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group .input-icons {
   margin-bottom: 40px;
-  display:flex;
+  display: flex;
   align-items: center;
 }
-.logintoaccount{
-  font-size: 30px;
-  font-family: 'Poppins';
-  padding-bottom: 30px;
+label {
+  display: block;
   font-weight: bold;
+  margin-bottom: 5px;
 }
 
 .input-icons .icon {
@@ -34,20 +40,12 @@
   padding-left: 45px;
 }
 
-  .form-group {
-  margin-bottom: 20px;
-  }
-
-  label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-  }
-
-  .form-control {
+input[type="text"],
+input[type="email"],
+input[type="password"] {
   display: block;
   width: 100%;
-  font-size: 16px;
+  font-size: 24px;
   line-height: 1.5;
   padding-top: 10px;
   padding-bottom: 20px;
@@ -55,64 +53,51 @@
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 10px;
-  }
-
-.alreadyaccount{
-  font-size: 17px;
-  font-family: 'Poppins';
-  padding-top: 10px;
-  padding-left: 5px;
 }
 
-  .alreadyaccount a{
-    color:blue;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  .form-group .btn-primary {
-    display: block;
-    padding: 10px;
-    font-size: 20px;
-    width: 405px;
-    font-weight: bold;
-    line-height: 1.5;
-    color: #fff;
-    background-color: blue;
-    border: 1px solid blue;
-    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-    box-sizing: border-box;
-    border-radius: 10px;
-  }
-  input[type="text"]
-  {
-      font-size:24px;
-  }
-  input[type="password"]
-  {
-      font-size:24px;
-  }
-
-  .form-group .btn-primary:hover {
-  background-color:  hsl(246, 90%, 45%);
-  border-color:  hsl(246, 90%, 45%);
-
-  }
-  .card-container .alert {
-    font-size: 16px;
-    padding-top: 30px;
-  }
-
-  .alert {
+.alreadyaccount {
+  font-size: 17px;
+  font-family: "Poppins";
+  padding-top: 20px;
+  padding-left: 5px;
+}
+.alreadyaccount a {
+  color: blue;
+  text-decoration: none;
+  font-weight: bold;
+}
+.form-group-btn {
+  display: block;
   padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
-  border-radius: 5px;
-  }
+  font-size: 20px;
+  width: 405px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: #fff;
+  background-color: blue;
+  border: 1px solid blue;
+  border-radius: 10px;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  box-sizing: border-box;
+}
 
-  .alert-danger {
-    color: #9c1825;
-  }
+.form-group-btn:hover {
+  background-color: hsl(246, 90%, 45%);
+  border-color: hsl(246, 90%, 45%);
+}
 
-  .alert-success {
+.alert-danger {
+  font-size: 16px;
+  padding-left: 5px;
+  font-family: "Poppins";
+  margin-left: 520px;
+  color: #9c1825;
+}
+
+.alert-success {
+  font-size: 16px;
+  padding-left: 5px;
+  font-family: "Poppins";
+  margin-left: 520px;
   color: #00ff3c;
 }
