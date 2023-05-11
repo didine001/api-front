@@ -48,6 +48,7 @@ export class LoginComponent {
 
   onSubmit(): void {
     const { username, password } = this.form.value;
+    this.form.markAllAsTouched();
     this.authService.login(username, password).subscribe(
       (data) => {
         this.tokenStorage.saveToken(data.accessToken);

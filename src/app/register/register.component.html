@@ -4,18 +4,17 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
   />
 </head>
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
+<form [formGroup]="form" *ngIf="!isSuccessful" (ngSubmit)="onSubmit()">
   <h1>Register your account</h1>
-  <div class="form-group">
-    <div class="input-icons">
-      <i class="fa fa-user icon"></i>
-      <input type="text" formControlName="username" name="username" />
-    </div>
-    <div
+
+  <mat-form-field appearance="outline" class="form-group">
+    <mat-label>Username</mat-label>
+    <input matInput formControlName="username" name="username" />
+    <mat-icon matSuffix class="fa fa-user icon"></mat-icon>
+    <mat-error
       *ngIf="
         form.controls['username'].invalid && form.controls['username'].touched
       "
-      class="alert alert-danger"
     >
       <div *ngIf="form.controls['username'].errors?.['required']">
         Username is required
@@ -26,16 +25,15 @@
       <div *ngIf="form.controls['username'].errors?.['maxlength']">
         Username cannot be longer than 25 characters
       </div>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="input-icons">
-      <i class="fa fa-envelope icon"></i>
-      <input type="text" formControlName="email" name="email" />
-    </div>
-    <div
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="form-group">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" name="email" type="email" />
+    <mat-icon matSuffix class="fa fa-envelope icon"></mat-icon>
+    <mat-error
       *ngIf="form.controls['email'].invalid && form.controls['email'].touched"
-      class="alert alert-danger"
     >
       <div *ngIf="form.controls['email'].errors?.['required']">
         Email is required
@@ -46,21 +44,25 @@
       <div *ngIf="form.controls['email'].errors?.['maxlength']">
         Email cannot be longer than 25 characters
       </div>
-      <div *ngIf="form.controls['email'].errors?.['pattern']">
+      <div *ngIf="form.controls['email'].errors?.['email']">
         Email is not valid
       </div>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="input-icons">
-      <i class="fa fa-lock icon"></i>
-      <input type="password" formControlName="password" name="password" />
-    </div>
-    <div
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="form-group">
+    <mat-label>Password</mat-label>
+    <input
+      matInput
+      formControlName="password"
+      name="password"
+      type="password"
+    />
+    <mat-icon matSuffix class="fa fa-lock icon"></mat-icon>
+    <mat-error
       *ngIf="
         form.controls['password'].invalid && form.controls['password'].touched
       "
-      class="alert alert-danger"
     >
       <div *ngIf="form.controls['password'].errors?.['required']">
         Password is required
@@ -71,7 +73,11 @@
       <div *ngIf="form.controls['password'].errors?.['maxlength']">
         Password cannot be longer than 25 characters
       </div>
-    </div>
-  </div>
+    </mat-error>
+  </mat-form-field>
   <button type="submit" class="form-group-btn">Register</button>
 </form>
+<div *ngIf="isSuccessful" class="welcome-back">Welcome back !</div>
+<div *ngIf="isSignUpFailed" class="alert alert-danger">
+  {{ errorMessage }}
+</div>
